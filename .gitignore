@@ -1,0 +1,9 @@
+site/node_modules
+site/build/assets/js
+site/build/assets/css
+site/build/content
+site/build/thumbs
+site/build/kirby
+site/build/panel
+side/bower_components
+websocket-server/node_modules

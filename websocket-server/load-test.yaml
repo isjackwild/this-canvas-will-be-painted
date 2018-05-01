@@ -1,0 +1,20 @@
+config:
+  target: http://159.89.13.36
+  processor: ./functions.js
+  phases:
+  - duration: 30
+    arrivalRate: 1
+    rampTo: 10
+    name: 'warm up'
+  - peak: 60
+    arrivalRate: 10
+scenarios:
+- engine: socketio
+  flow:
+  - loop:
+    - function: getXY
+    - emit:
+        channel: mousemove
+        data: "{{ xy }}"
+    - think: 0.14
+    count: 60
